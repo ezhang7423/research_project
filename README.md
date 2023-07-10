@@ -2,7 +2,7 @@
 
 # TODO (delete me)
 
-1. Replace {{research_project}}
+1. Replace {{research_project}} (use no dashes)
 2. Replace {{research_project_tag}}
 3. Replace language_control_diffusion folder name
 
