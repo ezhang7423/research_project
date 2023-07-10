@@ -1,8 +1,14 @@
 # {{research_project}}
 
+# TODO (delete me)
+
+1. Replace {{research_project}}
+2. Replace {{research_project_tag}}
+3. Replace language_control_diffusion folder name
+
 <div align="center">
 
-[![Build status](https://github.com/ezhang7423/{{research_project}}/workflows/build/badge.svg?branch=master&event=push)](https://github.com/ezhang7423/{{research_project}}/actions?query=workflow%3Abuild)
+[![Build status](https://github.com/ezhang7423/{{research_project}}/actions/workflows/build.yml/badge.svg)](https://github.com/ezhang7423/{{research_project}}/actions/workflows/build.yml/badge.svg)
 [![Dependencies Status](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)](https://github.com/ezhang7423/{{research_project}}/pulls?utf8=%E2%9C%93&q=is%3Apr%20author%3Aapp%2Fdependabot)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Security: bandit](https://img.shields.io/badge/security-bandit-green.svg)](https://github.com/PyCQA/bandit)
