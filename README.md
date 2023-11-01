@@ -22,7 +22,7 @@
 
 ## ⚓ Installation
 
-We require [Mambaforge](https://github.com/conda-forge/miniforge#mambaforge) (a faster drop-in replacement of conda) or [conda](https://docs.conda.io/en/latest/miniconda.html). Mambaforge is recommended. To install, simply run
+We require [conda](https://docs.conda.io/en/latest/miniconda.html). Afterwards to install, simply run
 
 ```bash
 $ make install

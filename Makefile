@@ -1,12 +1,10 @@
 .ONESHELL:
-
 #* Variables
-SHELL := /usr/bin/bash
+SHELL := bash
 PYTHON := python
 PYTHONPATH := `pwd`
-CONDA != type -P mamba >/dev/null 2>&1 && echo "mamba" || echo "conda"
+CONDA := conda
 CONDA_ACTIVATE = source $$(conda info --base)/etc/profile.d/conda.sh ; conda activate ; conda activate
-CONDA_ACTIVATE_2 = source $$(conda info --base)/etc/profile.d/$(CONDA).sh ; $(CONDA) activate ; $(CONDA) activate # hack to make work with mamba
 
 #* Docker variables
 IMAGE := {{research_project}}
@@ -24,20 +22,18 @@ poetry-remove:
 #* Installation
 .PHONY: install
 install:
-
 	! type -P poetry &> /dev/null && curl -sSL https://install.python-poetry.org | python3 -
-	! type -P $(CONDA) &> /dev/null && { echo "Please install conda (https://docs.conda.io/en/latest/miniconda.html) or mamba (https://mamba.readthedocs.io/en/latest/installation.html)"; exit 1; }
+	! type -P $(CONDA) &> /dev/null && { echo "Please install conda (https://docs.conda.io/en/latest/miniconda.html)"; exit 1; }
 
 	# install {{research_project}} conda environment
 	$(CONDA) create -n {{research_project}} python=3.10 -y
 	$(CONDA_ACTIVATE) {{research_project}}
-	$(CONDA_ACTIVATE_2) {{research_project}}
 
 	type python
-	
+
 	poetry lock -n && poetry export --without-hashes > requirements.txt
 	poetry install -n
-	-poetry run mypy --install-types --non-interactive ./
+	# -poetry run mypy --install-types --non-interactive ./
 
 .PHONY: pre-commit-install
 pre-commit-install:
