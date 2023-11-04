@@ -2,11 +2,12 @@
 
 # TODO (delete me)
 
-0. Rename the folder `research_project` 
+0. Rename the folder `research_project`
 1. Replace all occurences of the token `research_project` (use no dashes)
 2. Replace all occurences of the token `project_tag`
 3. Replace language_control_diffusion folder name
-4. (Optional) Add `PYPI_PASSWORD` for publishing and `GITHUB_TOKEN` for autoreleases and responding to issues
+4. Copy `./research_project/.env.example` to `./research_project/.env` and edit the copied version.
+5. (Optional) Add `PYPI_PASSWORD` for publishing and `GITHUB_TOKEN` for autoreleases and responding to issues on github secrets
 
 <div align="center">
 
