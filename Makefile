@@ -7,7 +7,7 @@ CONDA := conda
 CONDA_ACTIVATE = source $$(conda info --base)/etc/profile.d/conda.sh ; conda activate ; conda activate
 
 #* Docker variables
-IMAGE := {{research_project}}
+IMAGE := research_project
 VERSION := latest
 
 #* Poetry
@@ -25,9 +25,9 @@ install:
 	! type -P poetry &> /dev/null && curl -sSL https://install.python-poetry.org | python3 -
 	! type -P $(CONDA) &> /dev/null && { echo "Please install conda (https://docs.conda.io/en/latest/miniconda.html)"; exit 1; }
 
-	# install {{research_project}} conda environment
-	$(CONDA) create -n {{research_project}} python=3.10 -y
-	$(CONDA_ACTIVATE) {{research_project}}
+	# install research_project conda environment
+	$(CONDA) create -n research_project python=3.10 -y
+	$(CONDA_ACTIVATE) research_project
 
 	type python
 
@@ -52,14 +52,14 @@ formatting: codestyle
 #* Linting
 .PHONY: test
 test:
-	PYTHONPATH=$(PYTHONPATH) poetry run pytest -c pyproject.toml --cov-report=html --cov={{research_project}} tests/
+	PYTHONPATH=$(PYTHONPATH) poetry run pytest -c pyproject.toml --cov-report=html --cov=research_project tests/
 	poetry run coverage-badge -o assets/images/coverage.svg -f
 
 .PHONY: check-codestyle
 check-codestyle:
 	poetry run isort --diff --check-only --settings-path pyproject.toml ./
 	poetry run black --diff --check --config pyproject.toml ./
-	poetry run darglint --verbosity 2 {{research_project}} tests
+	poetry run darglint --verbosity 2 research_project tests
 
 .PHONY: mypy
 mypy:
@@ -69,7 +69,7 @@ mypy:
 check-safety:
 	poetry check
 	poetry run safety check --full-report
-	poetry run bandit -ll --recursive {{research_project}} tests
+	poetry run bandit -ll --recursive research_project tests
 
 .PHONY: lint
 lint: test check-codestyle mypy check-safety

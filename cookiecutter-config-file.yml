@@ -1,8 +1,8 @@
 # This file contains values from Cookiecutter
 
 default_context:
-  project_name: "{{research_project}}"
-  project_description: "{{research_project_tag}}"
+  project_name: "research_project"
+  project_description: "project_tag"
   organization: "ezhang7423"
   license: "MIT"
   minimal_python_version: 3.8

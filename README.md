@@ -1,22 +1,24 @@
-# {{research_project}}
+# research_project
 
 # TODO (delete me)
 
-1. Replace {{research_project}} (use no dashes)
-2. Replace {{research_project_tag}}
+0. Rename the folder `research_project` 
+1. Replace all occurences of the token `research_project` (use no dashes)
+2. Replace all occurences of the token `project_tag`
 3. Replace language_control_diffusion folder name
+4. (Optional) Add `PYPI_PASSWORD` for publishing and `GITHUB_TOKEN` for autoreleases and responding to issues
 
 <div align="center">
 
-[![Build status](https://github.com/ezhang7423/{{research_project}}/actions/workflows/build.yml/badge.svg)](https://github.com/ezhang7423/{{research_project}}/actions/workflows/build.yml/badge.svg)
-[![Dependencies Status](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)](https://github.com/ezhang7423/{{research_project}}/pulls?utf8=%E2%9C%93&q=is%3Apr%20author%3Aapp%2Fdependabot)
+[![Build status](https://github.com/ezhang7423/research_project/actions/workflows/build.yml/badge.svg)](https://github.com/ezhang7423/research_project/actions/workflows/build.yml/badge.svg)
+[![Dependencies Status](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)](https://github.com/ezhang7423/research_project/pulls?utf8=%E2%9C%93&q=is%3Apr%20author%3Aapp%2Fdependabot)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Security: bandit](https://img.shields.io/badge/security-bandit-green.svg)](https://github.com/PyCQA/bandit)
-[![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/ezhang7423/{{research_project}}/blob/master/.pre-commit-config.yaml)
-[![Semantic Versions](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--versions-e10079.svg)](https://github.com/ezhang7423/{{research_project}}/releases)
-[![License](https://img.shields.io/github/license/ezhang7423/{{research_project}})](https://github.com/ezhang7423/{{research_project}}/blob/master/LICENSE)
+[![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/ezhang7423/research_project/blob/master/.pre-commit-config.yaml)
+[![Semantic Versions](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--versions-e10079.svg)](https://github.com/ezhang7423/research_project/releases)
+[![License](https://img.shields.io/github/license/ezhang7423/research_project)](https://github.com/ezhang7423/research_project/blob/master/LICENSE)
 
-{{research_project_tag}}
+project_tag
 
 </div>
 
@@ -31,16 +33,16 @@ $ make install
 ### Development features
 
 - Supports for `Python 3.8` and higher.
-- [`Poetry`](https://python-poetry.org/) as the dependencies manager. See configuration in [`pyproject.toml`](https://github.com/ezhang7423/{{research_project}}/blob/master/pyproject.toml) and [`setup.cfg`](https://github.com/ezhang7423/{{research_project}}/blob/master/setup.cfg).
+- [`Poetry`](https://python-poetry.org/) as the dependencies manager. See configuration in [`pyproject.toml`](https://github.com/ezhang7423/research_project/blob/master/pyproject.toml) and [`setup.cfg`](https://github.com/ezhang7423/research_project/blob/master/setup.cfg).
 - Automatic codestyle with [`black`](https://github.com/psf/black), [`isort`](https://github.com/timothycrosley/isort) and [`pyupgrade`](https://github.com/asottile/pyupgrade).
 - Ready-to-use [`pre-commit`](https://pre-commit.com/) hooks with code-formatting.
 - Type checks with [`mypy`](https://mypy.readthedocs.io); docstring checks with [`darglint`](https://github.com/terrencepreilly/darglint); security checks with [`safety`](https://github.com/pyupio/safety) and [`bandit`](https://github.com/PyCQA/bandit)
 - Testing with [`pytest`](https://docs.pytest.org/en/latest/).
-- Ready-to-use [`.editorconfig`](https://github.com/ezhang7423/{{research_project}}/blob/master/.editorconfig), [`.dockerignore`](https://github.com/ezhang7423/{{research_project}}/blob/master/.dockerignore), and [`.gitignore`](https://github.com/ezhang7423/{{research_project}}/blob/master/.gitignore). You don't have to worry about those things.
+- Ready-to-use [`.editorconfig`](https://github.com/ezhang7423/research_project/blob/master/.editorconfig), [`.dockerignore`](https://github.com/ezhang7423/research_project/blob/master/.dockerignore), and [`.gitignore`](https://github.com/ezhang7423/research_project/blob/master/.gitignore). You don't have to worry about those things.
 
 ## 📈 Releases
 
-You can see the list of available releases on the [GitHub Releases](https://github.com/ezhang7423/{{research_project}}/releases) page.
+You can see the list of available releases on the [GitHub Releases](https://github.com/ezhang7423/research_project/releases) page.
 
 We follow [Semantic Versions](https://semver.org/) specification, and use the [`Release Drafter`](https://github.com/marketplace/actions/release-drafter). As pull requests are merged, a draft release is kept up-to-date listing the changes, ready to publish when you’re ready. With the categories option, you can categorize pull requests in release notes using labels.
 
@@ -74,7 +76,7 @@ make codestyle
 
 ### Makefile usage
 
-[`Makefile`](https://github.com/ezhang7423/{{research_project}}/blob/master/Makefile) contains a lot of functions for faster development.
+[`Makefile`](https://github.com/ezhang7423/research_project/blob/master/Makefile) contains a lot of functions for faster development.
 
 <details>
 <summary>1. Download and remove Poetry</summary>
@@ -226,7 +228,7 @@ Remove docker image with
 make docker-remove
 ```
 
-More information [about docker](https://github.com/ezhang7423/{{research_project}}/tree/master/docker).
+More information [about docker](https://github.com/ezhang7423/research_project/tree/master/docker).
 
 </p>
 </details>
@@ -299,9 +301,9 @@ Building a new version of the application contains steps:
 
 ## 🛡 License
 
-[![License](https://img.shields.io/github/license/ezhang7423/{{research_project}})](https://github.com/ezhang7423/{{research_project}}/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/ezhang7423/research_project)](https://github.com/ezhang7423/research_project/blob/master/LICENSE)
 
-This project is licensed under the terms of the `MIT` license. See [LICENSE](https://github.com/ezhang7423/{{research_project}}/blob/master/LICENSE) for more details.
+This project is licensed under the terms of the `MIT` license. See [LICENSE](https://github.com/ezhang7423/research_project/blob/master/LICENSE) for more details.
 
 ## 📃 Citation
 

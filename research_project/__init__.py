@@ -1,5 +1,5 @@
 # type: ignore[attr-defined]
-"""{{research_project_tag}}"""
+"""project_tag"""
 
 import sys
 from importlib import metadata as importlib_metadata

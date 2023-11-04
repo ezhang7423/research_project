@@ -7,8 +7,8 @@ from random import choice
 import typer
 from rich.console import Console
 
-from {{research_project}} import version
-from {{research_project}}.example import hello
+from research_project import version
+from research_project.example import hello
 
 
 class Color(str, Enum):
@@ -21,8 +21,8 @@ class Color(str, Enum):
 
 
 app = typer.Typer(
-    name="{{research_project}}",
-    help="{{research_project_tag}}",
+    name="research_project",
+    help="project_tag",
     add_completion=False,
 )
 console = Console()
@@ -32,7 +32,7 @@ def version_callback(print_version: bool) -> None:
     """Print the version of the package."""
     if print_version:
         console.print(
-            f"[yellow]{{research_project}}[/] version: [bold blue]{version}[/]"
+            f"[yellow]research_project[/] version: [bold blue]{version}[/]"
         )
         raise typer.Exit()
 
@@ -54,7 +54,7 @@ def main(
         "--version",
         callback=version_callback,
         is_eager=True,
-        help="Prints the version of the {{research_project}} package.",
+        help="Prints the version of the research_project package.",
     ),
 ) -> None:
     """Print a greeting with a giving name."""

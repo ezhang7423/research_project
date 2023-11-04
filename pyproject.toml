@@ -5,12 +5,12 @@ requires = ["poetry_core>=1.0.0"]
 
 [tool.poetry]
 authors = ["ezhang7423 <ete@ucsb.edu>"]
-description = "{{research_project_tag}}"
-homepage = "https://github.com/ezhang7423/{{research_project}}"
+description = "project_tag"
+homepage = "https://github.com/ezhang7423/research_project"
 license = "MIT"
-name = "{{research_project}}"
+name = "research_project"
 readme = "README.md"
-repository = "https://github.com/ezhang7423/{{research_project}}"
+repository = "https://github.com/ezhang7423/research_project"
 version = "0.1.0"
 
 # Keywords description https://python-poetry.org/docs/pyproject/#keywords
@@ -29,15 +29,16 @@ classifiers = [
 
 [tool.poetry.scripts]
 # Entry points for the package https://python-poetry.org/docs/pyproject/#scripts
-"{{research_project}}" = "{{research_project}}.__main__:app"
+"research_project" = "research_project.__main__:app"
 
 [tool.poetry.dependencies]
 python = "~3.10"
 
-loguru = "^0.7.0"
-typer = {extras = ["all"], version = "^0.9.0"}
-rich = "^13.4.2"
 eztils = "^0.4.74"
+loguru = "^0.7.0"
+rich = "^13.4.2"
+typer = {extras = ["all"], version = "^0.9.0"}
+typer-config = "^1.2.1"
 
 [tool.poetry.dev-dependencies]
 bandit = "^1.7.1"
@@ -136,7 +137,7 @@ addopts = [
 source = ["tests"]
 
 [coverage.paths]
-source = "{{research_project}}"
+source = "research_project"
 
 [coverage.run]
 branch = true
