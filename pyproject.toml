@@ -34,7 +34,7 @@ classifiers = [
 [tool.poetry.dependencies]
 python = "~3.10"
 
-eztils = "^0.4.74"
+eztils = "^0.4.75"
 loguru = "^0.7.0"
 rich = "^13.4.2"
 typer = {extras = ["all"], version = "^0.9.0"}
