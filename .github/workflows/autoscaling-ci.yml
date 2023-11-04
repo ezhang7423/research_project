@@ -1,0 +1,43 @@
+name: autoscaling-ci
+on:
+  workflow_dispatch:
+    inputs:
+      number-nodes:
+        description: 'Number of nodes'
+        required: true
+        default: 4
+  # push:
+
+env:
+  number-nodes: 4
+
+jobs:
+  prejob:
+    runs-on: arc-gke
+    outputs:
+      node_matrix: ${{ steps.set-matrix.outputs.node_matrix }}
+    steps:
+      - name: Python setup
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.10
+
+      - name: Use python to convert number-nodes to a list
+        id: set-matrix
+        run: |
+          matrix_value=$(python -c "print(str(list(range(1, ${{ github.event.inputs.number-nodes || env.number-nodes }} + 1))).replace(' ', ''))")
+          echo "node_matrix=$matrix_value" >> $GITHUB_OUTPUT
+
+  test:
+    runs-on: arc-gke    
+    needs: prejob
+    strategy:
+      fail-fast: true
+      matrix:
+        node: ${{ fromJson(needs.prejob.outputs.node_matrix) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Run tests
+        run: |
+          echo "Running tests on node ${{ matrix.node }}" 
