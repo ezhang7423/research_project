@@ -4,16 +4,15 @@
 """ 
 Other global variables
 """
+import os
 import sys
 from importlib import metadata as importlib_metadata
 from pathlib import Path
 
-from eztils import abspath, setup_path, datestr
-
-import os
-
-from rich import print
 from dotenv import load_dotenv
+from eztils import abspath, datestr, setup_path
+from rich import print
+
 load_dotenv()
 
 
@@ -28,13 +27,14 @@ version: str = get_version()
 __version__ = version
 
 REPO_DIR = setup_path(Path(abspath()) / "..")
-DATA_ROOT = setup_path(os.getenv('DATA_ROOT') or  REPO_DIR / "data")
-RUN_DIR = setup_path(DATA_ROOT / 'runs')
+DATA_ROOT = setup_path(os.getenv("DATA_ROOT") or REPO_DIR)
+RUN_DIR = setup_path(DATA_ROOT / "runs")
 LOG_DIR = setup_path(RUN_DIR / datestr())
 
 
 print(f"LOG DIR: {LOG_DIR}")
 
-if not (REPO_DIR / 'runs').exists():
+# symlink repo dir / runs to run_dir
+if not (REPO_DIR / "runs").exists() and (REPO_DIR / "runs") != RUN_DIR:
     print(f'Creating symlink from {REPO_DIR / "runs"} to {RUN_DIR}')
-    (REPO_DIR / 'runs').symlink_to(RUN_DIR)
+    (REPO_DIR / "runs").symlink_to(RUN_DIR)

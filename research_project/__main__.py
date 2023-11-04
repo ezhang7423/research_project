@@ -8,7 +8,7 @@ import typer
 from rich.console import Console
 from typer_config.decorators import dump_json_config, use_json_config
 
-from research_project import version, LOG_DIR
+from research_project import LOG_DIR, version
 from research_project.example import hello
 
 
@@ -38,7 +38,7 @@ def version_callback(print_version: bool) -> None:
 
 @app.command(name="")
 @use_json_config()
-@dump_json_config(str(LOG_DIR / 'config.json'))
+@dump_json_config(str(LOG_DIR / "config.json"))
 def main(
     name: str = typer.Option(..., help="Person to greet."),
     color: Optional[Color] = typer.Option(
