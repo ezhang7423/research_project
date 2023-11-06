@@ -1,4 +1,4 @@
-name: Run on <GPU-ENABLED-RUNTIME>
+name: Run on beater
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   simple-hello:
-    runs-on: <GPU-ENABLED-RUNTIME>
+    runs-on: beater
     container:
       image: pytorch/pytorch:2.1.0-cuda12.1-cudnn8-runtime
       options:
