@@ -1,4 +1,4 @@
-name: Run on self-hosted
+name: Run on <GPU-ENABLED-RUNTIME>
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   simple-hello:
-    runs-on: self-hosted
+    runs-on: <GPU-ENABLED-RUNTIME>
     container:
       image: pytorch/pytorch:2.1.0-cuda12.1-cudnn8-runtime
       options:
