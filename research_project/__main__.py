@@ -8,7 +8,10 @@ import typer
 from rich.console import Console
 from typer_config.decorators import dump_json_config, use_json_config
 
-from research_project import LOG_DIR, version, setup_experiment
+from research_project import setup_experiment
+
+setup_experiment()
+from research_project import LOG_DIR, version
 from research_project.example import hello
 
 
@@ -60,13 +63,11 @@ def main(
 ) -> None:
     """Print a greeting with a giving name."""
     setup_experiment()
-    
+
     if color is None:
-        color = choice(list(Color))    
+        color = choice(list(Color))
     greeting: str = hello(name)
     console.print(f"[bold {color}]{greeting}[/]")
-    
 
 
-if __name__ == "__main__":
-    app()
+app()
