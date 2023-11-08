@@ -5,9 +5,10 @@
 0. Rename the folder `research_project`
 1. Replace all occurences of the token `research_project` (use no dashes)
 2. Replace all occurences of the token `project_tag`
-3. Replace language_control_diffusion folder name
-4. Copy `./research_project/.env.example` to `./research_project/.env` and edit the copied version.
-5. (Optional) Add `PYPI_PASSWORD` for publishing and `GITHUB_TOKEN` for autoreleases and responding to issues on github secrets
+3. Copy `./research_project/.env.example` to `./research_project/.env` and edit the copied version.
+4. (Optional) Add `PYPI_PASSWORD` for publishing and `GITHUB_TOKEN` for autoreleases and responding to issues on github secrets
+
+(if this gets any longer, make this into a script. or maybe just make it into a script now)
 
 <div align="center">
 
