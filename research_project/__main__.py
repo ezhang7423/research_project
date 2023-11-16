@@ -62,7 +62,6 @@ def main(
     ),
 ) -> None:
     """Print a greeting with a giving name."""
-    setup_experiment()
 
     if color is None:
         color = choice(list(Color))
